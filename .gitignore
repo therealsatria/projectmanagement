@@ -1,0 +1,91 @@
+# Ignore build artifacts
+[Bb]in/
+[Oo]bj/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userprefs
+
+# Ignore Visual Studio temporary files
+*.vs/
+*.vscode/
+
+# Ignore NuGet packages directory
+packages/
+
+# Ignore local development environment files
+.env
+.env.local
+
+# Ignore Azure Functions local settings
+local.settings.json
+
+# Ignore ReSharper files
+_ReSharper.*
+*.ReSharper
+
+# Ignore Rider files
+.idea/
+*.idea
+
+# Ignore dotnet tools directory
+.dotnet/
+
+# Ignore test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Ignore logs and databases
+*.log
+*.sqlite
+*.db
+
+# Ignore output files
+out/
+dist/
+
+# Ignore npm and node_modules
+node_modules/
+
+# Ignore bower components
+bower_components/
+
+# Ignore compiled files
+*.dll
+*.pdb
+*.exe
+
+# Ignore generated files
+*.Generated.cs
+
+# Ignore publish output
+publish/
+
+# Ignore .NET Core local tools directory
+.dotnet/tools/
+
+# Ignore Visual Studio Code workspace settings
+.vscode/
+
+# Ignore JetBrains Rider settings
+.idea/
+
+# Ignore macOS specific files
+.DS_Store
+
+# Ignore Linux specific files
+*~
+
+# Ignore .NET Core project specific files
+launchSettings.json
+
+# Ignore Azure Functions local settings
+local.settings.json
+
+# Ignore Azure App Service artifacts
+*.scm.config
+
+# Ignore Azure Functions artifacts
+bin/
+obj/
