@@ -21,9 +21,9 @@ namespace Repositories
             return await _context.Users.ToListAsync();
         }
 
-        public async Task<User> GetUserByIdAsync(Guid id)
+        public async Task<User> GetUserByIdAsync(Guid UserId)
         {
-            return await _context.Users.FindAsync(id);
+            return await _context.Users.FindAsync(UserId);
         }
 
         public async Task AddUserAsync(User user)
@@ -38,9 +38,9 @@ namespace Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteUserAsync(Guid id)
+        public async Task DeleteUserAsync(Guid UserId)
         {
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Users.FindAsync(UserId);
             if (user != null)
             {
                 _context.Users.Remove(user);

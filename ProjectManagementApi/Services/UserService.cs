@@ -25,9 +25,11 @@ namespace Services
             {
                 userDTOs.Add(new UserDTO
                 {
-                    Id = user.Id,
-                    Name = user.Name,
-                    Email = user.Email
+                    UserId = user.UserId,
+                    Username = user.Username,
+                    Email = user.Email,
+                    CreatedOn = user.CreatedOn,
+                    ModifiedOn = user.ModifiedOn
                 });
                 
             }
@@ -43,9 +45,11 @@ namespace Services
 
             return new UserDTO
             {
-                Id = user.Id,
-                Name = user.Name,
-                Email = user.Email
+                UserId = user.UserId,
+                Username = user.Username,
+                Email = user.Email,
+                CreatedOn = user.CreatedOn,
+                ModifiedOn = user.ModifiedOn
             };
         }
 
@@ -54,18 +58,27 @@ namespace Services
         {
             var user = new User
             {
-                Id = Guid.NewGuid(),
-                Name = request.Name,
-                Email = request.Email
+                UserId = Guid.NewGuid(),
+                Username = request.Username,
+                Email = request.Email,
+                CreatedOn = DateTime.Now,
+                ModifiedOn = DateTime.Now,
+                Notebooks = new List<Notebook>(),
+                Projects = new List<Project>(),
+                Comments = new List<Comment>(),
+                AssignedTasks = new List<ProjectTask>(),
+                ActivityLogs = new List<ActivityLog>()
             };
 
             await _userRepository.AddUserAsync(user);
 
             return new UserDTO
             {
-                Id = user.Id,
-                Name = user.Name,
-                Email = user.Email
+                UserId = user.UserId,
+                Username = user.Username,
+                Email = user.Email,
+                CreatedOn = user.CreatedOn,
+                ModifiedOn = user.ModifiedOn
             };
         }
 
@@ -74,16 +87,19 @@ namespace Services
             var user = await _userRepository.GetUserByIdAsync(id);
             if (user == null) Console.WriteLine("User not found");
 
-            user.Name = request.Name;
+            user.Username = request.Username;
             user.Email = request.Email;
+            user.ModifiedOn = DateTime.Now;
 
             await _userRepository.UpdateUserAsync(user);
 
             return new UserDTO
             {
-                Id = user.Id,
-                Name = user.Name,
-                Email = user.Email
+                UserId = user.UserId,
+                Username = user.Username,
+                Email = user.Email,
+                CreatedOn = user.CreatedOn,
+                ModifiedOn = user.ModifiedOn
             };
         }
 

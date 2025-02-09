@@ -4,17 +4,17 @@ namespace Models
 {
     public class ActivityLog
     {
-        public Guid LogId { get; set; } // Changed to Guid
+        public Guid LogId { get; set; } = Guid.NewGuid();
         public Guid UserId { get; set; } // Changed to Guid
-        public string EntityType { get; set; }
-        public Guid EntityId { get; set; } // Changed to Guid
-        public string ActionType { get; set; }
-        public string Description { get; set; }
-        public string OldValues { get; set; }
-        public string NewValues { get; set; }
-        public DateTime CreatedOn { get; set; }
+        public required string EntityType { get; set; }
+        public Guid EntityId { get; set; } 
+        public required string ActionType { get; set; }
+        public required string Description { get; set; }
+        public required string OldValues { get; set; }
+        public required string NewValues { get; set; }
+        public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
 
         // Navigation properties
-        public User User { get; set; }
+        public required User User { get; set; }
     }
 }

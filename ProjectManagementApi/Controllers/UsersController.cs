@@ -24,10 +24,10 @@ namespace Controllers
             return Ok(users);
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<UserDTO>> GetUserById(Guid id)
+        [HttpGet("{UserId}")]
+        public async Task<ActionResult<UserDTO>> GetUserById(Guid UserId)
         {
-            var user = await _userService.GetUserByIdAsync(id);
+            var user = await _userService.GetUserByIdAsync(UserId);
             if (user == null) return NotFound();
             return Ok(user);
         }
@@ -36,21 +36,21 @@ namespace Controllers
         public async Task<ActionResult<UserDTO>> CreateUser([FromBody] CreateUserRequest request)
         {
             var newUser = await _userService.CreateUserAsync(request);
-            return CreatedAtAction(nameof(GetUserById), new { id = newUser.Id }, newUser);
+            return CreatedAtAction(nameof(GetUserById), new { Userid = newUser.UserId }, newUser);
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult<UserDTO>> UpdateUser(Guid id, [FromBody] UpdateUserRequest request)
+        [HttpPut("{UserId}")]
+        public async Task<ActionResult<UserDTO>> UpdateUser(Guid UserId, [FromBody] UpdateUserRequest request)
         {
-            var updatedUser = await _userService .UpdateUserAsync(id, request);
+            var updatedUser = await _userService .UpdateUserAsync(UserId, request);
             if (updatedUser == null) return NotFound();
             return Ok(updatedUser);
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUser(Guid id)
+        [HttpDelete("{UserId}")]
+        public async Task<IActionResult> DeleteUser(Guid UserId)
         {
-            await _userService.DeleteUserAsync(id);
+            await _userService.DeleteUserAsync(UserId);
             return NoContent();
         }
 

@@ -4,15 +4,15 @@ namespace Models
 {
     public class Comment
     {
-        public Guid CommentId { get; set; } // Changed to Guid
+        public Guid CommentId { get; set; } = Guid.NewGuid();
         public Guid TaskId { get; set; } // Changed to Guid
         public Guid UserId { get; set; } // Changed to Guid
-        public string Content { get; set; }
-        public DateTime CreatedOn { get; set; }
-        public DateTime ModifiedOn { get; set; }
+        public required string Content { get; set; }
+        public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+        public DateTime ModifiedOn { get; set; } = DateTime.UtcNow;
 
         // Navigation properties
-        public ProjectTask ProjectTask { get; set; }
-        public User User { get; set; }
+        public required ProjectTask ProjectTask { get; set; }
+        public required User User { get; set; }
     }
 }

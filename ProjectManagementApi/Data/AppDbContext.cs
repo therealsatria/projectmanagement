@@ -53,6 +53,7 @@ namespace Data
                 .HasForeignKey(n => n.NotebookId);
 
             // Project relationships
+
             modelBuilder.Entity<Project>()
                 .HasMany(p => p.Boards)
                 .WithOne(b => b.Project)
@@ -69,6 +70,12 @@ namespace Data
                 .HasMany(m => m.Comments)
                 .WithOne(c => c.ProjectTask)
                 .HasForeignKey(c => c.TaskId);
+
+            modelBuilder.Entity<ProjectTask>()
+                .HasKey(t => t.TaskId);
+
+            modelBuilder.Entity<ActivityLog>()
+                .HasKey(l => l.LogId);
 
             base.OnModelCreating(modelBuilder);
         }
