@@ -1,91 +1,130 @@
-# Ignore build artifacts
+# ================================
+# .NET Core / ASP.NET Core
+# ================================
+## Ignore Visual Studio temporary files, build results, and other files
+**/bin/
+**/obj/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
 [Bb]in/
 [Oo]bj/
 
-# Ignore user-specific files
-*.user
-*.suo
-*.userprefs
-
-# Ignore Visual Studio temporary files
-*.vs/
-*.vscode/
-
-# Ignore NuGet packages directory
-packages/
-
-# Ignore local development environment files
-.env
-.env.local
-
-# Ignore Azure Functions local settings
-local.settings.json
-
-# Ignore ReSharper files
-_ReSharper.*
-*.ReSharper
-
-# Ignore Rider files
-.idea/
-*.idea
-
-# Ignore dotnet tools directory
-.dotnet/
-
-# Ignore test results
+## MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
-# Ignore logs and databases
-*.log
-*.sqlite
-*.db
-
-# Ignore output files
-out/
-dist/
-
-# Ignore npm and node_modules
-node_modules/
-
-# Ignore bower components
-bower_components/
-
-# Ignore compiled files
-*.dll
-*.pdb
-*.exe
-
-# Ignore generated files
-*.Generated.cs
-
-# Ignore publish output
-publish/
-
-# Ignore .NET Core local tools directory
-.dotnet/tools/
-
-# Ignore Visual Studio Code workspace settings
+## Tooling
+.vs/
 .vscode/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Ignore JetBrains Rider settings
-.idea/
+## Runtime data
+**/*.db
+**/*.sqlite
+**/*.sqlite3
 
-# Ignore macOS specific files
-.DS_Store
+## Files built by Visual Studio
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
 
-# Ignore Linux specific files
+## NuGet Packages
+*.nupkg
+packages/
+**/wwwroot/lib/
+
+## Publish output
+publish/
+out/
+
+## ASP.NET Core specific
+appsettings.Development.json
+appsettings.Production.json
+appsettings.*.json
+secrets.json
+web.config
+
+## Logs
+logs/
+*.log
+*.txt
+
+## Other
+*.bak
+*.cache
+*.tmp
+*.orig
 *~
 
-# Ignore .NET Core project specific files
-launchSettings.json
+# ================================
+# React TypeScript (Frontend)
+# ================================
+## dependencies
+node_modules/
+.pnp/
+.pnp.js
 
-# Ignore Azure Functions local settings
-local.settings.json
+## testing
+coverage/
 
-# Ignore Azure App Service artifacts
-*.scm.config
+## production
+build/
+dist/
 
-# Ignore Azure Functions artifacts
-bin/
-obj/
+## IDEs and editors
+.idea/
+*.iml
+.vscode/
+*.code-workspace
+
+## Environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+## Logs and databases
+*.log
+*.sqlite
+*.sqlite3
+
+## OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini

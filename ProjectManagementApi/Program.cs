@@ -2,7 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using Data;
 using Repositories;
 using Services;
-using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +23,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+// Tambahkan layanan CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000") // Izinkan frontend React
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -34,6 +45,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowReactFrontend"); // Terapkan policy CORS
 
 app.UseAuthorization();
 
