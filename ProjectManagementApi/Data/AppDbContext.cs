@@ -10,7 +10,7 @@ namespace Data
         public DbSet<Note> Notes { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Board> Boards { get; set; }
-        public DbSet<Models.Task> Tasks { get; set; }
+        public DbSet<ProjectTask> ProjectTasks { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<ActivityLog> ActivityLogs { get; set; }
 
@@ -60,14 +60,14 @@ namespace Data
 
             // Board relationships
             modelBuilder.Entity<Board>()
-                .HasMany(b => b.Tasks)
+                .HasMany(b => b.ProjectTasks)
                 .WithOne(t => t.Board)
                 .HasForeignKey(t => t.BoardId);
 
             // Task relationships
-            modelBuilder.Entity<Models.Task>()
+            modelBuilder.Entity<ProjectTask>()
                 .HasMany(m => m.Comments)
-                .WithOne(c => c.Task)
+                .WithOne(c => c.ProjectTask)
                 .HasForeignKey(c => c.TaskId);
 
             base.OnModelCreating(modelBuilder);

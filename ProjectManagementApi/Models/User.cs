@@ -15,7 +15,7 @@ namespace Models
         public ICollection<Notebook> Notebooks { get; set; }
         public ICollection<Project> Projects { get; set; }
         public ICollection<Comment> Comments { get; set; }
-        public ICollection<Task> AssignedTasks { get; set; }
+        public ICollection<ProjectTask> AssignedTasks { get; set; }
         public ICollection<ActivityLog> ActivityLogs { get; set; }
     }
 }

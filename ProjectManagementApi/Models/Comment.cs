@@ -12,7 +12,7 @@ namespace Models
         public DateTime ModifiedOn { get; set; }
 
         // Navigation properties
-        public Task Task { get; set; }
+        public ProjectTask ProjectTask { get; set; }
         public User User { get; set; }
     }
 }

@@ -14,6 +14,6 @@ namespace Models
 
         // Navigation properties
         public Project Project { get; set; }
-        public ICollection<Task> Tasks { get; set; }
+        public ICollection<ProjectTask> ProjectTasks { get; set; }
     }
 }

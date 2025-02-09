@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models
 {
-    public class Task
+    public class ProjectTask
     {
         public Guid TaskId { get; set; } // Changed to Guid
         public Guid BoardId { get; set; } // Changed to Guid
