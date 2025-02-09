@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Models;
 using Repositories;
 using DTOs;
+using System.ComponentModel.DataAnnotations;
 
 namespace Services
 {
@@ -71,7 +72,7 @@ namespace Services
         public async Task<UserDTO> UpdateUserAsync(Guid id, UpdateUserRequest request)
         {
             var user = await _userRepository.GetUserByIdAsync(id);
-            if (user == null) return null;
+            if (user == null) Console.WriteLine("User not found");
 
             user.Name = request.Name;
             user.Email = request.Email;
