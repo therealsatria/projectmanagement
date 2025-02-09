@@ -67,5 +67,28 @@ namespace Services
                 Email = user.Email
             };
         }
+
+        public async Task<UserDTO> UpdateUserAsync(Guid id, UpdateUserRequest request)
+        {
+            var user = await _userRepository.GetUserByIdAsync(id);
+            if (user == null) return null;
+
+            user.Name = request.Name;
+            user.Email = request.Email;
+
+            await _userRepository.UpdateUserAsync(user);
+
+            return new UserDTO
+            {
+                Id = user.Id,
+                Name = user.Name,
+                Email = user.Email
+            };
+        }
+
+        public async Task DeleteUserAsync(Guid id)
+        {
+            await _userRepository.DeleteUserAsync(id);
+        }
     }
 }

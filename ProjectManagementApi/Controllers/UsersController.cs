@@ -38,5 +38,21 @@ namespace Controllers
             var newUser = await _userService.CreateUserAsync(request);
             return CreatedAtAction(nameof(GetUserById), new { id = newUser.Id }, newUser);
         }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<UserDTO>> UpdateUser(Guid id, [FromBody] UpdateUserRequest request)
+        {
+            var updatedUser = await _userService .UpdateUserAsync(id, request);
+            if (updatedUser == null) return NotFound();
+            return Ok(updatedUser);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteUser(Guid id)
+        {
+            await _userService.DeleteUserAsync(id);
+            return NoContent();
+        }
+
     }
 }
