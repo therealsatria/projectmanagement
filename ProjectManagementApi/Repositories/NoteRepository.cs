@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using Models;
-using Data;
+using ProjectManagementApi.Models;
+using ProjectManagementApi.Data;
 
-namespace Repositories
+namespace ProjectManagementApi.Repositories
 {
     public class NoteRepository : INoteRepository
     {

@@ -1,13 +1,14 @@
-using DTOs;
+using ProjectManagementApi.Models;
+using ProjectManagementApi.Dtos;
 
 namespace Services
 {
     public interface INotebookService
     {
-        Task<List<NotebookDTO>> GetAllNotebooksAsync(Guid userId);
-        Task<NotebookDTO> GetNotebookByIdAsync(Guid id);
-        Task<NotebookDTO> CreateNotebookAsync(Guid userId, CreateNotebookRequest request);
-        Task<NotebookDTO> UpdateNotebookAsync(Guid id, UpdateNotebookRequest request);
+        Task<List<Notebook>> GetAllNotebooksAsync(Guid userId);
+        Task<Notebook> GetNotebookByIdAsync(Guid id);
+        Task<Notebook> CreateNotebookAsync(Guid userId, CreateNotebookRequest request);
+        Task<Notebook> UpdateNotebookAsync(Guid id, UpdateNotebookRequest request);
         Task DeleteNotebookAsync(Guid id);
     }
 }

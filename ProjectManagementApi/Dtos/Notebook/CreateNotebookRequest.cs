@@ -1,4 +1,4 @@
-namespace DTOs
+namespace ProjectManagementApi.Dtos
 {
     public class CreateNotebookRequest
     {

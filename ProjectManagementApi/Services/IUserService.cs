@@ -1,13 +1,14 @@
-using DTOs;
+using ProjectManagementApi.Models;
+using ProjectManagementApi.Dtos;
 
-namespace Services
+namespace ProjectManagementApi.Services
 {
     public interface IUserService
     {
-        Task<List<UserDTO>> GetAllUsersAsync();
-        Task<UserDTO> GetUserByIdAsync(Guid id);
-        Task<UserDTO> CreateUserAsync(CreateUserRequest request);
-        Task<UserDTO> UpdateUserAsync(Guid id, UpdateUserRequest request);
+        Task<List<User>> GetAllUsersAsync();
+        Task<User> GetUserByIdAsync(Guid id);
+        Task<User> CreateUserAsync(CreateUserRequest request);
+        Task<User> UpdateUserAsync(Guid id, UpdateUserRequest request);
         Task DeleteUserAsync(Guid id);
     }
 }

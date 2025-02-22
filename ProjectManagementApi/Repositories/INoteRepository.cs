@@ -1,6 +1,6 @@
-using Models;
+using ProjectManagementApi.Models;
 
-namespace Repositories
+namespace ProjectManagementApi.Repositories
 {
     public interface INoteRepository
     {

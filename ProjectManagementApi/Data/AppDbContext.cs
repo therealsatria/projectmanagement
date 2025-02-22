@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Models;
+using ProjectManagementApi.Models;
 
-namespace Data
+namespace ProjectManagementApi.Data
 {
     public class AppDbContext : DbContext
     {

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Services;
-using DTOs;
+using ProjectManagementApi.Services;
+using ProjectManagementApi.Dtos;
 
 namespace Controllers
 {
