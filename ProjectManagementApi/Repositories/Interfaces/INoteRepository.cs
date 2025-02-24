@@ -4,10 +4,10 @@ namespace ProjectManagementApi.Repositories.Interfaces
 {
     public interface INoteRepository
     {
-        Task<List<Note>> GetAllNotesAsync();
-        Task<Note> GetNoteByIdAsync(Guid noteId);
-        Task AddNoteAsync(Note note);
-        Task UpdateNoteAsync(Note note);
-        Task DeleteNoteAsync(Guid noteId);
+        Task<List<Note>> GetAllAsync();
+        Task<Note> GetByIdAsync(Guid noteId);
+        Task AddAsync(Note note);
+        Task UpdateAsync(Note note);
+        Task DeleteAsync(Guid noteId);
     }
 }

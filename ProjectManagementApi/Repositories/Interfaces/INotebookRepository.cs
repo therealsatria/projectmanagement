@@ -4,10 +4,10 @@ namespace ProjectManagementApi.Repositories.Interfaces
 {
     public interface INotebookRepository
     {
-        Task<List<Notebook>> GetAllNotebooksAsync();
-        Task<Notebook> GetNotebookByIdAsync(Guid notebookId);
-        Task AddNotebookAsync(Notebook notebook);
-        Task UpdateNotebookAsync(Notebook notebook);
-        Task DeleteNotebookAsync(Guid notebookId);
-    }
+        Task<List<Notebook>> GetAllAsync();
+        Task<Notebook> GetByIdAsync(Guid notebookId);
+        Task<Notebook> CreateAsync(Notebook notebook);
+        Task UpdateAsync(Notebook notebook);
+        Task DeleteAsync(Guid notebookId);
+    }   
 }

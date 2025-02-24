@@ -4,10 +4,10 @@ namespace ProjectManagementApi.Repositories.Interfaces
 {
     public interface IUserRepository
     {
-        Task<List<User>> GetAllUsersAsync();
-        Task<User> GetUserByIdAsync(Guid userId);
-        Task AddUserAsync(User user);
-        Task UpdateUserAsync(User user);
-        Task DeleteUserAsync(Guid UserId);
+        Task<List<User>> GetAllAsync();
+        Task<User> GetByIdAsync(Guid userId);
+        Task<User> CreateAsync(User user);
+        Task<User> UpdateAsync(User user);
+        Task DeleteAsync(Guid UserId);
     }
 }
