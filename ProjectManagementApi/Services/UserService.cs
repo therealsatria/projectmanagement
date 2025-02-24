@@ -1,3 +1,4 @@
+using AutoMapper;
 using ProjectManagementApi.Models;
 using ProjectManagementApi.Dtos;
 using ProjectManagementApi.Services.interfaces;
@@ -8,35 +9,26 @@ namespace ProjectManagementApi.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IMapper _mapper;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, IMapper mapper)
         {
             _userRepository = userRepository;
+            _mapper = mapper;
         }
-
-        public Task<User> CreateUserAsync(CreateUserRequest request)
+        public async Task<List<UserDTO>> GetAllAsync()
         {
-            throw new NotImplementedException();
-        }
+            // var users = await _userRepository.GetAllAsync();
+            // return users.Select(u => new UserDTO
+            // {
+            //     UserId = u.UserId,
+            //     Username = u.Username,
+            //     Email = u.Email,
+            //     CreatedOn = u.CreatedOn,
+            //     ModifiedOn = u.ModifiedOn
+            // }).ToList();
+            
 
-        public Task DeleteUserAsync(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<User>> GetAllUsersAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<User> GetUserByIdAsync(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<User> UpdateUserAsync(Guid id, UpdateUserRequest request)
-        {
-            throw new NotImplementedException();
         }
     }
 }
