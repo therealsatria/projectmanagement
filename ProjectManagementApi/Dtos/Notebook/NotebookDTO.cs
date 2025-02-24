@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace ProjectManagementApi.Dtos
 {
     public class NotebookDTO

@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ProjectManagementApi.Models;
 using ProjectManagementApi.Data;
+using ProjectManagementApi.Repositories.Interfaces;
 
 namespace ProjectManagementApi.Repositories
 {

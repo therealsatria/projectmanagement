@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Konfigurasi SQLite
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("koneksidb")));
 
 // AutoMapper
 builder.Services.AddAutoMapper(typeof(Program));

@@ -7,8 +7,7 @@ namespace ProjectManagementApi.Models
         public required string Email { get; set; } 
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
         public DateTime ModifiedOn { get; set; } = DateTime.UtcNow;
-
-        // Navigation properties
+        
         public required ICollection<Notebook> Notebooks { get; set; }
         public required ICollection<Project> Projects { get; set; }
         public required ICollection<Comment> Comments { get; set; }

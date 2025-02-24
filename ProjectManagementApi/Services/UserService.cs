@@ -1,6 +1,7 @@
 using ProjectManagementApi.Models;
-using ProjectManagementApi.Repositories;
 using ProjectManagementApi.Dtos;
+using ProjectManagementApi.Services.interfaces;
+using ProjectManagementApi.Repositories.Interfaces;
 
 namespace ProjectManagementApi.Services
 {
