@@ -16,29 +16,6 @@ namespace Services
             _userRepository = userRepository;
         }
 
-        public Task<Notebook> CreateNotebookAsync(Guid userId, CreateNotebookRequest request)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteNotebookAsync(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<Notebook>> GetAllNotebooksAsync(Guid userId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Notebook> GetNotebookByIdAsync(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Notebook> UpdateNotebookAsync(Guid id, UpdateNotebookRequest request)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

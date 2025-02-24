@@ -15,7 +15,7 @@ namespace ProjectManagementApi.Repositories{
         {
             return await _context.Comments.ToListAsync();
         }
-        public async Task<Comment> GetByIdAsync(Guid commentId)
+        public async Task<Comment> GetAsync(Guid commentId)
         {
             return await _context.Comments.FindAsync(commentId);
         }

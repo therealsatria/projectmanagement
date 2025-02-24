@@ -18,7 +18,7 @@ namespace ProjectManagementApi.Repositories
         {
             return await _context.Users.ToListAsync();
         }
-        public async Task<User> GetByIdAsync(Guid userId)
+        public async Task<User> GetAsync(Guid userId)
         {
             return await _context.Users.FindAsync(userId);
         }

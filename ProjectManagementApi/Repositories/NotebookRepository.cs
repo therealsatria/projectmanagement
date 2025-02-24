@@ -18,7 +18,7 @@ namespace ProjectManagementApi.Repositories
         {
             return await _context.Notebooks.ToListAsync();
         }
-        public async Task<Notebook> GetByIdAsync(Guid notebookId)
+        public async Task<Notebook> GetAsync(Guid notebookId)
         {
             return await _context.Notebooks.FindAsync(notebookId);
         }

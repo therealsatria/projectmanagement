@@ -16,7 +16,7 @@ namespace ProjectManagementApi.Repositories
         {
             return await _context.ActivityLogs.ToListAsync();
         }
-        public async Task<ActivityLog> GetByIdAsync(Guid ActivityLogId)
+        public async Task<ActivityLog> GetAsync(Guid ActivityLogId)
         {
             return await _context.ActivityLogs.FindAsync(ActivityLogId);
         }
