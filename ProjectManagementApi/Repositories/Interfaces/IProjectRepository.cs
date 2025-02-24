@@ -7,7 +7,7 @@ namespace ProjectManagementApi.Repositories.Interfaces
         Task<List<Project>> GetAllAsync();
         Task<Project> GetByIdAsync(Guid projectId);
         Task<Project> CreateAsync(Project project);
-        Task UpdateAsync(Project project);
+        Task<Project> UpdateAsync(Project project);
         Task DeleteAsync(Guid projectId);
     }
 }

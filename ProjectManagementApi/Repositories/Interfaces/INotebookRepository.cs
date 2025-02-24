@@ -7,7 +7,7 @@ namespace ProjectManagementApi.Repositories.Interfaces
         Task<List<Notebook>> GetAllAsync();
         Task<Notebook> GetByIdAsync(Guid notebookId);
         Task<Notebook> CreateAsync(Notebook notebook);
-        Task UpdateAsync(Notebook notebook);
+        Task<Notebook> UpdateAsync(Notebook notebook);
         Task DeleteAsync(Guid notebookId);
     }   
 }

@@ -6,8 +6,8 @@ namespace ProjectManagementApi.Repositories.Interfaces
     {
         Task<List<Note>> GetAllAsync();
         Task<Note> GetByIdAsync(Guid noteId);
-        Task AddAsync(Note note);
-        Task UpdateAsync(Note note);
+        Task<Note> CreateAsync(Note note);
+        Task<Note> UpdateAsync(Note note);
         Task DeleteAsync(Guid noteId);
     }
 }

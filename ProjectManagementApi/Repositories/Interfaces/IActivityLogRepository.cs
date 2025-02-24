@@ -7,7 +7,7 @@ namespace ProjectManagementApi.Repositories.Interfaces
         Task<List<ActivityLog>> GetAllAsync();
         Task<ActivityLog> GetByIdAsync(Guid activityLogId);
         Task<ActivityLog> CreateAsync(ActivityLog activityLog);
-        Task UpdateAsync(ActivityLog activityLog);
+        Task<ActivityLog> UpdateAsync(ActivityLog activityLog);
         Task DeleteAsync(Guid activityLogId);
     }
 }

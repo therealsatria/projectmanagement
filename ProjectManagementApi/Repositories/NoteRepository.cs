@@ -13,30 +13,28 @@ namespace ProjectManagementApi.Repositories
         {
             _context = context;
         }
-
-        public async Task<List<Note>> GetAllNotesAsync()
+        public async Task<List<Note>> GetAllAsync()
         {
             return await _context.Notes.ToListAsync();
         }
-
-        public async Task<Note> GetNoteByIdAsync(Guid noteId)
+        public async Task<Note> GetByIdAsync(Guid noteId)
         {
             return await _context.Notes.FindAsync(noteId);
         }
-
-        public async Task AddNoteAsync(Note note)
+        public async Task<Note> CreateAsync(Note note)
         {
-            await _context.Notes.AddAsync(note);
+            _context.Notes.Add(note);
             await _context.SaveChangesAsync();
+            return note;
         }
-
-        public async Task UpdateNoteAsync(Note note)
+        public async Task<Note> UpdateAsync(Note note)
         {
+            note.ModifiedOn = DateTime.Now;
             _context.Notes.Update(note);
             await _context.SaveChangesAsync();
+            return note;
         }
-
-        public async Task DeleteNoteAsync(Guid noteId)
+        public async Task DeleteAsync(Guid noteId)
         {
             var note = await _context.Notes.FindAsync(noteId);
             if (note != null)

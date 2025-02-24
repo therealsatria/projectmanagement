@@ -7,7 +7,7 @@ namespace ProjectManagementApi.Repositories.Interfaces
         Task<List<Comment>> GetAllAsync();
         Task<Comment> GetByIdAsync(Guid commentId);
         Task<Comment> CreateAsync(Comment comment);
-        Task UpdateAsync(Comment comment);
+        Task<Comment> UpdateAsync(Comment comment);
         Task DeleteAsync(Guid commentId);
     }
 }

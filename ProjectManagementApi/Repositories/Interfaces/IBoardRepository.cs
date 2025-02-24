@@ -7,7 +7,7 @@ namespace ProjectManagementApi.Repositories.Interfaces
         Task<List<Board>> GetAllAsync();
         Task<Board> GetByIdAsync(Guid boardId);
         Task<Board> CreateAsync(Board board);
-        Task UpdateAsync(Board board);
+        Task<Board> UpdateAsync(Board board);
         Task DeleteAsync(Guid boardId);
     }
 }
