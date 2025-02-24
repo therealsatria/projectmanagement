@@ -3,7 +3,7 @@ namespace ProjectManagementApi.Models
     public class ActivityLog
     {
         public Guid LogId { get; set; } = Guid.NewGuid();
-        public Guid UserId { get; set; } // Changed to Guid
+        public Guid UserId { get; set; } 
         public required string EntityType { get; set; }
         public Guid EntityId { get; set; } 
         public required string ActionType { get; set; }
